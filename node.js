@@ -32,8 +32,8 @@ module.exports = function (RED) {
             }else{
                 node.options.params = {};
             }
-            node.options.headers.clientId = node.clientId;
-            node.options.headers.clientSecret = node.clientSecret;
+            node.options.headers['X-Naver-Client-Id'] = node.clientId;
+            node.options.headers['X-Naver-Client-Secret'] = node.clientSecret;
 
             axios.get(node.url, node.options)
                 .then(function (response){
