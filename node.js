@@ -31,6 +31,10 @@ module.exports = function (RED) {
                 node.options.params = node.params;
             }else{
                 node.options.params = {};
+                node.options.params.query = n.query;
+                node.options.params.display = n.display;
+                node.options.params.sort = n.sort;
+                node.options.params.start = n.start;
             }
             node.options.headers['X-Naver-Client-Id'] = node.clientId;
             node.options.headers['X-Naver-Client-Secret'] = node.clientSecret;
